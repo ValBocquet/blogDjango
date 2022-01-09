@@ -1,0 +1,13 @@
+.text-justify {
+    text-align: justify;
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+.text-right {
+    text-align: right;
+    text-decoration: overline;
+    font-size: .8em;
+    font-style: italic;
+
+}
