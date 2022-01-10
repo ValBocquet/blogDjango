@@ -9,9 +9,18 @@
 
 
         <article class="mb-4">
-            <div class="container px-4 px-lg-5">
+            <div class="container px-1 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
+                        {% if user.is_authenticated %}
+                        <button type="button" class="btn btn-warning">
+                            <a href="{% url 'articles:edit' article.slug %}">Editer</a>
+                        </button>
+
+                        <button type="button" class="btn btn-danger">
+                            <a href="{% url 'articles:delete' article.slug %}">Supprimer</a>
+                        </button>
+                        {% endif %}
                         <h1 class="text-center">{{article.title}}</h1>
                         <p class="text-right">Ecrit par {{article.author}} le {{article.created_on|date:'j F Y'}}</p>
                         <p class="text-justify">{{article.content}}</p>
